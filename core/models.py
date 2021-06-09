@@ -3,21 +3,13 @@ from django.db import models
 # Create your models here.
 
 #Modelo para categoria
-class Categoria(models.Model):
-    idCategoria = models.IntegerField(primary_key=True, verbose_name='Id de categoría')
-    nombreCategoria = models.CharField(max_length=50, verbose_name="Nombre de la Categoría")
-
-    def __str__(self):
-        return self.nombreCategoria
-
-#Modelo para vehiculo
-class Vehiculo(models.Model):
-    patente = models.CharField(max_length=6, primary_key=True, verbose_name="Patente")
-    marca = models.CharField(max_length=20, verbose_name="Marca vehiculo")
-    modelo = models.CharField(max_length=20, null=True, blank=True, verbose_name="Modelo")
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.patente
 
         
+class arriendoCleta(models.Model):
+    idbicicleta = models.AutoField(primary_key=True, verbose_name="id bicicleta")
+    modelo = models.CharField(max_length=50,verbose_name="Modelo bicicleta")
+    porte = models.CharField(max_length=30, verbose_name="porte bicicleta")
+    aro = models.IntegerField(verbose_name="aro de rueda")
+
+
+
