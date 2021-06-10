@@ -10,6 +10,6 @@ class arriendoCleta(models.Model):
     modelo = models.CharField(max_length=50,verbose_name="Modelo bicicleta")
     porte = models.CharField(max_length=30, verbose_name="porte bicicleta")
     aro = models.IntegerField(verbose_name="aro de rueda")
-
+    marca = models.CharField(max_length=50  ,verbose_name="marca bicicleta")
 
 
