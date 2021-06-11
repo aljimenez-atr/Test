@@ -12,4 +12,15 @@ class arriendoCleta(models.Model):
     aro = models.IntegerField(verbose_name="aro de rueda")
     marca = models.CharField(max_length=50  ,verbose_name="marca bicicleta")
 
+    def __str__(self):
+        return f'{self.idRegistro}, {self.modelo}'
 
+class registroUsuario(models.Model):
+    usuario = models.CharField(primary_key=True,max_length=50,verbose_name="Nombre Usuario")
+    nombres = models.CharField(max_length=70,verbose_name="Nombre")
+    apellidos = models.CharField(max_length=70,verbose_name="Apellido")
+    correo = models.EmailField(verbose_name="Correo")
+    contraseña = models.CharField(max_length=30,verbose_name="Contraseña")
+
+    def __str__(self):
+        return self.usuario
