@@ -11,7 +11,15 @@ def menu(request):
     return render(request,'core/menu.html')
 
 def registro(request):
-    return render(request,'core/registro.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login/')
+    else:
+        form = UserCreationForm()
+
+    return render(request,'core/registro.html',{'form': form})
 
 def login(request):
     return render(request,'core/login.html')
